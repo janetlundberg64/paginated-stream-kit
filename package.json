@@ -1,0 +1,17 @@
+{
+  "name": "paginated-stream-kit",
+  "version": "0.1.0",
+  "description": "Zero-dependency ESM library that reads fixed-size pages from seekable byte sources by offset and length.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
