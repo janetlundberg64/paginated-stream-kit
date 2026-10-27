@@ -41,3 +41,10 @@ The trade-off: the library does not open files or fetch URLs. It takes an inject
 ## Exports
 
 - `PaginatedStreamReader` — the only class. Constructed with `(source, { pageSize })`. Methods: `read()`, `readMany(count)`, `readAll()`, `seek(offset)`. Properties: `offset`, `pageIndex`, `eof`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
